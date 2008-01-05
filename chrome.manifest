@@ -1,4 +1,5 @@
 
 content	faviconizetab	content/
 overlay	chrome://browser/content/browser.xul	chrome://faviconizetab/content/faviconizetab.xul
+overlay	chrome://songbird/content/feathers/basic-layouts/xul/mainplayer.xul	chrome://faviconizetab/content/faviconizetab.xul
 
