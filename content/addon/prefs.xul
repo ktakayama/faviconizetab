@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+
+<dialog xmlns:html="http://www.w3.org/1999/xhtml"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   onload="faviconize.prefManager.initPrefs();"
+   ondialogaccept="faviconize.prefManager.setPrefs();"
+   title="FaviconizeTab - Preferences">
+
+   <script language="javascript" src="chrome://faviconizetab/content/addon/prefs.js" />
+   <script language="javascript" src="chrome://faviconizetab/content/addon/addon.js" />
+   <script language="javascript">var pref = faviconize.prefManager;</script>
+
+   <vbox>
+      <groupbox width="400">
+         <caption label="Quick Faviconize" />
+
+         <description>Choose modified key to do 'FaviconizeTab' when clicking on the tab.</description>
+
+         <grid>
+            <columns>
+               <column />
+               <column />
+            </columns>
+
+            <rows>
+               <row>
+                  <checkbox id="quick.alt" label="Alt + Click" />
+                  <checkbox id="quick.ctrl" label="Ctrl + Click" />
+                  <checkbox id="quick.shift" label="Shift + Click" />
+               </row>
+               <row>
+                  <checkbox id="quick.dbl" label="Double Click" />
+               </row>
+            </rows>
+         </grid>
+      </groupbox>
+
+      <groupbox width="450" height="200">
+         <caption label="Auto Faviconize" />
+
+         <checkbox id="auto.enable" label="Enable auto faviconize" onclick="pref.toggleTextbox('auto.includes')" />
+         <description>Enter a URL that you want to do faviconize always, and separate each URLs with a space or return.</description>
+         <description>You can use the wildcard(*) character for multiple pages.</description>
+
+         <hbox align="center">
+            <textbox id="auto.includes" flex="1" multiline="true" rows="10" disabled="true" />
+         </hbox>
+
+      </groupbox>
+   </vbox>
+
+</dialog>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://faviconizetab/content/faviconizetab.css" type="text/css"?>
+
+<overlay id="faviconizetab" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+   <script type="application/x-javascript" src="chrome://faviconizetab/content/faviconizetab.js" />
+
+   <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/addon.js" />
+   <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/quick_fav.js" />
+   <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/auto_fav.js" />
+
+</overlay>
+

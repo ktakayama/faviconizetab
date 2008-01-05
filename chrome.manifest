@@ -1,0 +1,4 @@
+
+content	faviconizetab	content/
+overlay	chrome://browser/content/browser.xul	chrome://faviconizetab/content/faviconizetab.xul
+

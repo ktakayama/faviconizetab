@@ -1,0 +1,11 @@
+
+tab[faviconized="true"] {
+   min-width: 36px !important;
+   max-width: 36px !important;
+}
+
+tab[faviconized="true"] .tab-text,
+tab[faviconized="true"] .tab-close-button {
+   display: none !important;
+}
+

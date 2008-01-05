@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+   <RDF:Description about="urn:mozilla:install-manifest">
+
+      <em:id>faviconizetab@espion.just-size.jp</em:id>
+      <em:version>0.9.7.4</em:version>
+      <em:name>FaviconizeTab</em:name>
+      <em:description>The width of the specified tab becomes small up to the size of favicon.</em:description>
+      <em:creator>Kyosuke Takayama</em:creator>
+      <em:homepageURL>http://espion.just-size.jp/archives/06/308085916.html</em:homepageURL>
+      <em:optionsURL>chrome://faviconizetab/content/addon/prefs.xul</em:optionsURL>
+      <em:iconURL>chrome://faviconizetab/content/faviconizetab.png</em:iconURL>
+      <em:contributor>Arthur</em:contributor>
+
+      <em:targetApplication>
+         <RDF:Description>
+            <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+            <em:minVersion>1.5</em:minVersion>
+            <em:maxVersion>3.0.0.*</em:maxVersion>
+         </RDF:Description>
+      </em:targetApplication>
+
+   </RDF:Description>
+
+</RDF:RDF>
+
