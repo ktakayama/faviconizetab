@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
 
-<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+   xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
 
-   <RDF:Description about="urn:mozilla:install-manifest">
+   <Description about="urn:mozilla:install-manifest">
 
       <em:id>faviconizetab@espion.just-size.jp</em:id>
       <em:version>0.9.7.5s</em:version>
@@ -16,20 +17,14 @@
       <em:contributor>Arthur</em:contributor>
 
       <em:targetApplication>
-         <RDF:Description>
-            <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-            <em:minVersion>1.5</em:minVersion>
-            <em:maxVersion>3.0b3pre</em:maxVersion>
-         </RDF:Description>
-
-         <RDF:Description>
+         <Description>
             <em:id>songbird@songbirdnest.com</em:id>
-            <em:minVersion>0.3*</em:minVersion>
+            <em:minVersion>0.3</em:minVersion>
             <em:maxVersion>0.5.*</em:maxVersion>
-         </RDF:Description>
+         </Description>
       </em:targetApplication>
 
-   </RDF:Description>
+   </Description>
 
-</RDF:RDF>
+</RDF>
 
