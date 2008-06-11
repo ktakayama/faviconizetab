@@ -54,7 +54,7 @@
       <groupbox width="400">
          <caption label="misc" />
 
-         <checkbox id="hide.disable" label="Does not hide a close button" />
+         <checkbox id="misc.nothide" label="Does not hide a close button" />
       </groupbox>
    </vbox>
 

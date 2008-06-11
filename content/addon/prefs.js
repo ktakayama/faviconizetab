@@ -7,7 +7,7 @@ if(typeof faviconize == 'undefined')
    var faviconize = {};
 
 faviconize.prefManager = {
-   keys: new Array('quick.alt', 'quick.ctrl', 'quick.shift', 'quick.dbl', 'auto.enable', 'hide.disable'),
+   keys: new Array('quick.alt', 'quick.ctrl', 'quick.shift', 'quick.dbl', 'auto.enable', 'misc.nothide'),
 
    initPrefs: function() {
       var io = faviconize.IO.init();

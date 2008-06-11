@@ -3,12 +3,12 @@
  * It is released under the MIT LICENSE.
 */
 
-faviconize.hideBtn = {
+faviconize.miscFav = {
    init: function() {
       var io   = faviconize.IO.init();
       var self = faviconize.hideBtn;
 
-      if(io.getBool('hide.disable')) return;
+      if(io.getBool('misc.nothide')) return;
       gBrowser.tabContainer.setAttribute('favhideclose', true);
    },
 
@@ -18,5 +18,5 @@ faviconize.hideBtn = {
    }
 }
 
-faviconize.addon.add(faviconize.hideBtn);
+faviconize.addon.add(faviconize.miscFav);
 
