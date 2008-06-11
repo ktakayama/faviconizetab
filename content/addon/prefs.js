@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2007, Kyosuke Takayama <support@mc.neweb.ne.jp>
+ * Copyright (c) 2006-2008, Kyosuke Takayama <support@mc.neweb.ne.jp>
  * It is released under the MIT LICENSE.
 */
 
@@ -7,7 +7,7 @@ if(typeof faviconize == 'undefined')
    var faviconize = {};
 
 faviconize.prefManager = {
-   keys: new Array('quick.alt', 'quick.ctrl', 'quick.shift', 'quick.dbl', 'auto.enable'),
+   keys: new Array('quick.alt', 'quick.ctrl', 'quick.shift', 'quick.dbl', 'auto.enable', 'hide.disable'),
 
    initPrefs: function() {
       var io = faviconize.IO.init();

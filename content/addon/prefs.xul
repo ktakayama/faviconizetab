@@ -38,7 +38,7 @@
          </grid>
       </groupbox>
 
-      <groupbox width="450" height="200">
+      <groupbox width="400" height="200">
          <caption label="Auto Faviconize" />
 
          <checkbox id="auto.enable" label="Enable auto faviconize" onclick="pref.toggleTextbox('auto.includes')" />
@@ -49,6 +49,12 @@
             <textbox id="auto.includes" flex="1" multiline="true" rows="10" disabled="true" />
          </hbox>
 
+      </groupbox>
+
+      <groupbox width="400">
+         <caption label="misc" />
+
+         <checkbox id="hide.disable" label="Does not hide a close button" />
       </groupbox>
    </vbox>
 

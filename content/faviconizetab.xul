@@ -9,6 +9,7 @@
    <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/addon.js" />
    <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/quick_fav.js" />
    <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/auto_fav.js" />
+   <script type="application/x-javascript" src="chrome://faviconizetab/content/addon/hide.js" />
 
 </overlay>
 
