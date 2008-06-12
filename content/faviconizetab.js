@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2007, Kyosuke Takayama <support@mc.neweb.ne.jp>
+ * Copyright (c) 2006-2008, Kyosuke Takayama <support@mc.neweb.ne.jp>
 
  * It is released under the MIT LICENSE.
  * http://www.opensource.org/licenses/mit-license.php
