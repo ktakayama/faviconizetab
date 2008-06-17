@@ -11,29 +11,37 @@ var faviconize = {
       if(!tab || tab.localName != 'tab')
          tab = gBrowser.mCurrentTab;
 
-      var session = this.session;
-
       if(tab.hasAttribute('faviconized')) {
-         tab.removeAttribute('faviconized');
-         tab.minWidth = tab._oldMinWidth;
-         tab.maxWidth = tab._oldMaxWidth;
-         if(session) session.deleteTabValue(tab, 'faviconized');
+         this.disable(tab);
       } else {
-         tab._oldMinWidth = tab.minWidth || gBrowser.mTabContainer.mTabMinWidth;
-         tab._oldMaxWidth = tab.maxWidth || 250;
-
-         tab.setAttribute('faviconized', true);
-         tab.minWidth  = '';
-         tab.maxWidth  = '';
-
-         if(session) session.setTabValue(tab, 'faviconized', true);
+         this.enable(tab);
       }
+   },
+
+   enable: function(tab) {
+      tab._oldMinWidth = tab.minWidth;
+      tab._oldMaxWidth = tab.maxWidth;
+
+      tab.setAttribute('faviconized', true);
+      tab.minWidth  = '';
+      tab.maxWidth  = '';
+
+      if(this.session) this.session.setTabValue(tab, 'faviconized', true);
+   },
+
+   disable: function(tab) {
+      tab.removeAttribute('faviconized');
+      tab.minWidth = tab._oldMinWidth || gBrowser.mTabContainer.mTabMinWidth;
+      tab.maxWidth = tab._oldMaxWidth || 250;
+      if(this.session) this.session.deleteTabValue(tab, 'faviconized');
    },
 
    restore: function(e) {
       var tab = e.originalTarget;
       if(faviconize.session.getTabValue(tab, 'faviconized'))
-         faviconize.toggle(tab);
+         faviconize.enable(tab);
+      else
+         faviconize.disable(tab);
    }
 }
 
@@ -55,11 +63,6 @@ faviconize.ui = {
       var menu = gBrowser.mStrip.firstChild.nextSibling;
       menu.insertBefore(toggle, menu.lastChild.previousSibling);
       menu.addEventListener('popupshown', self.popup, false);
-
-      if(typeof Cc != 'undefined') {
-         faviconize.session = Cc["@mozilla.org/browser/sessionstore;1"].getService(Ci.nsISessionStore);
-         window.addEventListener('SSTabRestoring', faviconize.restore, false);
-      }
    },
 
    popup: function() {
@@ -96,4 +99,9 @@ faviconize.override = {
 
 window.addEventListener('load', faviconize.ui.init, false);
 window.addEventListener('load', faviconize.override.init, false);
+
+if(typeof Cc != 'undefined') {
+   faviconize.session = Cc["@mozilla.org/browser/sessionstore;1"].getService(Ci.nsISessionStore);
+   window.addEventListener('SSTabRestoring', faviconize.restore, false);
+}
 
