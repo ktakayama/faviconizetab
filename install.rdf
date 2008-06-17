@@ -6,7 +6,7 @@
    <RDF:Description about="urn:mozilla:install-manifest">
 
       <em:id>faviconizetab@espion.just-size.jp</em:id>
-      <em:version>0.9.8</em:version>
+      <em:version>0.9.8.1</em:version>
       <em:name>FaviconizeTab</em:name>
       <em:description>The width of the specified tab becomes small up to the size of favicon.</em:description>
       <em:creator>Kyosuke Takayama</em:creator>
