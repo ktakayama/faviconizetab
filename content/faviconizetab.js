@@ -19,8 +19,8 @@ var faviconize = {
    },
 
    enable: function(tab) {
-      tab._oldMinWidth = tab.minWidth;
-      tab._oldMaxWidth = tab.maxWidth;
+      tab._oldMinWidth = tab.minWidth || gBrowser.mTabContainer.mTabMinWidth;
+      tab._oldMaxWidth = tab.maxWidth || 250;
 
       tab.setAttribute('faviconized', true);
       tab.minWidth  = '';
@@ -33,14 +33,14 @@ var faviconize = {
       tab.removeAttribute('faviconized');
       if(tab._oldMinWidth) tab.minWidth = tab._oldMinWidth;
       if(tab._oldMaxWidth) tab.maxWidth = tab._oldMaxWidth;
-      if(this.session) this.session.deleteTabValue(tab, 'faviconized');
+      if(this.session) this.session.setTabValue(tab, 'faviconized', '');
    },
 
    restore: function(e) {
       var tab = e.originalTarget;
       if(faviconize.session.getTabValue(tab, 'faviconized'))
          faviconize.enable(tab);
-      else
+      else if(tab.hasAttribute('faviconized'))
          faviconize.disable(tab);
    }
 }
