@@ -31,8 +31,8 @@ var faviconize = {
 
    disable: function(tab) {
       tab.removeAttribute('faviconized');
-      tab.minWidth = tab._oldMinWidth || gBrowser.mTabContainer.mTabMinWidth;
-      tab.maxWidth = tab._oldMaxWidth || 250;
+      if(tab._oldMinWidth) tab.minWidth = tab._oldMinWidth;
+      if(tab._oldMaxWidth) tab.maxWidth = tab._oldMaxWidth;
       if(this.session) this.session.deleteTabValue(tab, 'faviconized');
    },
 
