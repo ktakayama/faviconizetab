@@ -101,8 +101,10 @@ faviconize.override = {
 window.addEventListener('load', faviconize.ui.init, false);
 window.addEventListener('load', faviconize.override.init, false);
 
+/*
 if(typeof Cc != 'undefined') {
    faviconize.session = Cc["@mozilla.org/browser/sessionstore;1"].getService(Ci.nsISessionStore);
    window.addEventListener('SSTabRestoring', faviconize.restore, false);
 }
+*/
 
