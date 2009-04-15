@@ -5,7 +5,7 @@
 
 faviconize.autoFav = {
    urls: new Array(),
-   _reptxt: '!aURI && faviconize.autoFav.loaded(aTab);',
+   _reptxt: 'faviconize.autoFav.loaded(aTab);',
 
    init: function() {
       var io   = faviconize.IO.init();
@@ -25,13 +25,13 @@ faviconize.autoFav = {
       });
 
       if(self.urls.length > 0) {
-         eval('gBrowser.setIcon = ' + gBrowser.setIcon.toString().replace(
-            'var', self._reptxt+'var'));
+         eval('gBrowser.mTabProgressListener = ' + gBrowser.mTabProgressListener.toString().replace(
+               'FullZoom', self._reptxt+'FullZoom'));
       }
    },
 
    update: function() {
-      eval('gBrowser.setIcon = ' + gBrowser.setIcon.toString().replace(this._reptxt, ''));
+      eval('gBrowser.mTabProgressListener = ' + gBrowser.mTabProgressListener.toString().replace(this._reptxt, ''));
       this.init();
    },
 
