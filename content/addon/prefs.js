@@ -36,12 +36,8 @@ faviconize.prefManager = {
       io.setChar('auto.includes', $('auto.includes').value);
 
       var win= Components.classes["@mozilla.org/appshell/window-mediator;1"].
-         getService(Components.interfaces.nsIWindowMediator).getEnumerator("navigator:browser");
-
-      while(win.hasMoreElements()) {
-         var browser = win.getNext();
-         browser.faviconize.addon.update();
-      }
+         getService(Components.interfaces.nsIWindowMediator).getMostRecentWindow("Songbird:Main");
+      win.faviconize.addon.update();
    },
 
    toggleTextbox: function(box) {
