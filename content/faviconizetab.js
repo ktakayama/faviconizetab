@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2006-2008, Kyosuke Takayama <support@mc.neweb.ne.jp>
+ * Copyright (c) 2006-2009, Kyosuke Takayama <support@mc.neweb.ne.jp>
 
  * It is released under the MIT LICENSE.
  * http://www.opensource.org/licenses/mit-license.php
@@ -56,18 +56,19 @@ faviconize.ui = {
       toggle.setAttribute('type', 'checkbox');
       toggle.setAttribute('id', 'tabContextFaviconizeTab');
       toggle.setAttribute('label', 'FaviconizeTab');
-      toggle.setAttribute('oncommand', 'faviconize.toggle(gBrowser.mContextTab);');
+      toggle.setAttribute('oncommand', 'var tabstrip = document.getBindingParent(this);'+
+            'faviconize.toggle(tabstrip.mContextTab);');
       toggle.setAttribute('accesskey', 'f');
       self.btn.toggle = toggle;
 
-      var menu = gBrowser.mStrip.firstChild.nextSibling;
+      var menu = document.getAnonymousElementByAttribute(gBrowser.mStrip, "anonid", "tabContextMenu");
       menu.insertBefore(toggle, menu.lastChild.previousSibling);
       menu.addEventListener('popupshown', self.popup, false);
    },
 
    popup: function() {
-      var target = gBrowser.mContextTab;
-      var tab = (target.localName == 'tabs') ? gBrowser.mCurrentTab : target;
+      var target = document.getBindingParent(this).mContextTab;
+      var tab = (target.localName == 'tab') ? target : gBrowser.mCurrentTab;
       faviconize.ui.btn.toggle.setAttribute('checked', tab.hasAttribute('faviconized'));
    }
 }
