@@ -1,6 +1,10 @@
 
-tab[faviconized="true"] .tab-text {
-   display: none !important;
+tab[faviconized="true"] .tab-text,
+tab[faviconized="true"] .tab-text-stack * {
+   visibility: hidden !important;
+   margin: 0px;
+   padding: 0px;
+   max-width: 5px;
 }
 
 .tabbrowser-tabs tab[faviconized="true"] {
