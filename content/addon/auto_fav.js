@@ -5,7 +5,7 @@
 
 faviconize.autoFav = {
    urls: new Array(),
-   _reptxt: '!aURI && faviconize.autoFav.loaded(aTab);',
+   _reptxt: 'faviconize.autoFav.loaded(aTab);',
 
    init: function() {
       var io   = faviconize.IO.init();
