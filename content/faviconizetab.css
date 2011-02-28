@@ -1,10 +1,10 @@
 
 tab[faviconized="true"] .tab-text,
 tab[faviconized="true"] .tab-text-stack * {
-   visibility: hidden !important;
    margin: 0px;
    padding: 0px;
-   max-width: 5px;
+   max-width: 0px;
+   display: none;
 }
 
 .tabbrowser-tabs tab[faviconized="true"] {
@@ -12,8 +12,13 @@ tab[faviconized="true"] .tab-text-stack * {
    max-width: 52px !important;
 }
 
-.tabbrowser-tabs[closebuttons="noclose"] tab[faviconized="true"],
-.tabbrowser-tabs[closebuttons="activetab"] tab[faviconized="true"][selected="false"],
+.tabbrowser-tabs tab[faviconized="true"] .tab-icon-image,
+.tabbrowser-tabs tab[faviconized="true"] .tab-close-button {
+   margin-left: 3px;
+}
+
+.tabbrowser-tabs[closebuttons="never"] tab[faviconized="true"],
+.tabbrowser-tabs[closebuttons="activetab"] tab[faviconized="true"]:not([selected="true"]),
 .tabbrowser-tabs[favhideclose="true"] tab[faviconized="true"] {
    max-width: 36px !important;
 }
