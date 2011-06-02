@@ -79,23 +79,6 @@ faviconize.override = {
          if(i == 'init') continue;
          self[i]();
       }
-   },
-
-   adjustTabstrip: function() {
-      var _o = gBrowser.mTabContainer.adjustTabstrip;
-      gBrowser.mTabContainer.adjustTabstrip = function() {
-         if(this.mCloseButtons != 1) return _o.apply(this, arguments);
-         var width = this.firstChild.boxObject.width;
-         for(var tab, i = 0;tab = this.childNodes[i];i++) {
-            if(!tab.hasAttribute("faviconized")) {
-               width = tab.boxObject.width;
-               break;
-            }
-         }
-         if(width > this.mTabClipWidth) this.setAttribute("closebuttons", "alltabs");
-         else this.setAttribute("closebuttons", "activetab");
-         this.mTabstripClosebutton.collapsed = this.mCloseButtons != 3;
-      }
    }
 }
 
