@@ -42,8 +42,8 @@
          <caption label="Auto Faviconize" />
 
          <checkbox id="auto.enable" label="Enable auto faviconize" onclick="pref.toggleTextbox('auto.includes')" />
-         <description>Enter a URL that you want to do faviconize always, and separate each URLs with a space or return.</description>
-         <description>You can use the wildcard(*) character for multiple pages.</description>
+         <description>Enter the URLs you want to faviconize by default. Use blankspace or return as separator.</description>
+         <description>You can use the wildcard (*) character for multiple pages.</description>
 
          <hbox align="center">
             <textbox id="auto.includes" flex="1" multiline="true" rows="10" disabled="true" />
@@ -54,7 +54,7 @@
       <groupbox width="400">
          <caption label="misc" />
 
-         <checkbox id="misc.nothide" label="Does not hide a close button" />
+         <checkbox id="misc.nothide" label="Do not hide close buttons" />
       </groupbox>
    </vbox>
 
