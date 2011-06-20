@@ -5,9 +5,18 @@
 
 faviconize.autoFav = {
    urls: new Array(),
-   _reptxt: 'faviconize.autoFav.loaded(aTab);',
 
    init: function() {
+      faviconize.autoFav.update();
+
+      var _o = gBrowser.setIcon;
+      gBrowser.setIcon = function(tab) {
+         _o.apply(this, arguments);
+         faviconize.autoFav.loaded(tab);
+      };
+   },
+
+   update: function() {
       var io   = faviconize.IO.init();
       var self = faviconize.autoFav;
 
@@ -23,16 +32,6 @@ faviconize.autoFav = {
          v = v.replace(/(\\\*)/g, '.*');
          self.urls.push(RegExp('^'+v+'$'));
       });
-
-      if(self.urls.length > 0) {
-         eval('gBrowser.setIcon = ' + gBrowser.setIcon.toString().replace(
-            'var', self._reptxt+'var'));
-      }
-   },
-
-   update: function() {
-      eval('gBrowser.setIcon = ' + gBrowser.setIcon.toString().replace(this._reptxt, ''));
-      this.init();
    },
 
    check: function(url) {
