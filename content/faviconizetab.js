@@ -82,6 +82,29 @@ faviconize.override = {
    }
 }
 
+faviconize.override._lockTabSizing = function() {
+   faviconize.o_lockTabSizing = gBrowser.mTabContainer._lockTabSizing;
+
+   gBrowser.mTabContainer._lockTabSizing = function(aTab) {
+      if(aTab.hasAttribute('faviconized')) {
+         gBrowser.mTabContainer._unlockTabSizing();
+         return;
+      }
+
+      faviconize.o_lockTabSizing.apply(this, arguments);
+
+      var tabs = this.tabbrowser.visibleTabs;
+      if(!tabs.length) return;
+      for(let i = 0; i < tabs.length; i++) {
+         let tab = tabs[i];
+         if(tab.hasAttribute('faviconized')) {
+            tab.style.MozTransition = "none";
+            tab.style.maxWidth = "";
+         }
+      }
+   }
+}
+
 window.addEventListener('load', faviconize.ui.init, false);
 window.addEventListener('load', faviconize.override.init, false);
 
