@@ -8,19 +8,27 @@ tab[faviconized="true"] .tab-text-stack * {
 }
 
 .tabbrowser-tabs tab[faviconized="true"][fadein="true"] {
-   min-width: 36px !important;
-   max-width: 52px !important;
+   min-width: 34px !important;
+   max-width: 50px !important;
 }
 
-.tabbrowser-tabs tab[faviconized="true"] .tab-icon-image,
-.tabbrowser-tabs tab[faviconized="true"] .tab-close-button {
-   margin-left: 3px;
+.tabbrowser-tabs tab[faviconized="true"][fadein="true"] .tab-icon-image  {
+   margin-left: 0px;
+}
+
+.tabbrowser-tabs tab[faviconized="true"][fadein="true"]:not([busy="true"]):not([progress="true"]) .tab-icon-image  {
+   display: inline;
+}
+
+.tabbrowser-tabs tab[faviconized="true"] .tab-throbber,
+.tabbrowser-tabs tab[faviconized="true"] .tab-icon-image  {
+   -moz-margin-end: 0px;
 }
 
 .tabbrowser-tabs[closebuttons="never"] tab[faviconized="true"][fadein="true"],
 .tabbrowser-tabs[closebuttons="activetab"] tab[faviconized="true"][fadein="true"]:not([selected="true"]),
 .tabbrowser-tabs[favhideclose="true"] tab[faviconized="true"][fadein="true"] {
-   max-width: 36px !important;
+   max-width: 34px !important;
 }
 
 .tabbrowser-tabs[favhideclose="true"] tab[faviconized="true"] .tab-close-button {
