@@ -26,7 +26,7 @@ var faviconize = {
       tab.minWidth  = '';
       tab.maxWidth  = '';
 
-      if(this.session) this.session.setTabValue(tab, 'faviconized', true);
+      if(this.session) this.session.setTabValue(tab, 'faviconized', '1');
    },
 
    disable: function(tab) {
