@@ -56,8 +56,8 @@ faviconize.ui = {
       toggle.setAttribute('type', 'checkbox');
       toggle.setAttribute('id', 'tabContextFaviconizeTab');
       toggle.setAttribute('label', 'FaviconizeTab');
-      toggle.setAttribute('oncommand', 'faviconize.toggle(gBrowser.mContextTab);');
       toggle.setAttribute('accesskey', 'f');
+      toggle.addEventListener('command', function(e) { faviconize.toggle(gBrowser.mContextTab); });
       self.btn.toggle = toggle;
 
       var menu = gBrowser.mStrip.firstChild.nextSibling;
