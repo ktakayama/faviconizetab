@@ -15,6 +15,7 @@
       <em:optionsURL>chrome://faviconizetab/content/addon/prefs.xul</em:optionsURL>
       <em:iconURL>chrome://faviconizetab/content/faviconizetab.png</em:iconURL>
       <em:contributor>Arthur</em:contributor>
+      <em:multiprocessCompatible>true</em:multiprocessCompatible>
 
       <em:targetApplication>
          <RDF:Description>
